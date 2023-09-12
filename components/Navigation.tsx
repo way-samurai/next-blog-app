@@ -16,11 +16,18 @@ const Navigation = ({ navLinks }: Props) => {
 
     return (
         <>
-            {navLinks.map((linkItem: NavLink) => (
-                <Link href={linkItem.href} key={linkItem.href}>
-                    {linkItem.label}
+            {navLinks.map((link: NavLink) => {
+                const isActive = pathname === link.href;
+
+                return (
+                <Link 
+                    href={link.href} 
+                    key={link.label} 
+                    className={isActive ? "active" : ""}>
+                    {link.label}
                 </Link>
-            ))}
+                )
+            })}
         </>
     );
 };
