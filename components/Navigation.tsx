@@ -17,8 +17,11 @@ const Navigation = ({ navLinks }: Props) => {
     return (
         <>
             {navLinks.map((link: NavLink) => {
-                const isActive = pathname === link.href;
-
+                const isActive =
+                pathname === link.href || // Ссылка точно соответствует текущему URL
+                (pathname !== '/' && pathname.startsWith(link.href + '/')) || // Ссылка начинается с текущего URL с дополнительным "/"
+                (pathname === '/' && link.href === '/'); // Обработка случая, когда текущий URL и ссылка оба равны "/"
+                
                 return (
                 <Link 
                     href={link.href} 
