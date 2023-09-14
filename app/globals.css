@@ -28,6 +28,7 @@ header > a {
 }
 header > a:hover {
   text-decoration: underline;
+  opacity: 0.6;
 }
 
 h1 {
@@ -54,11 +55,23 @@ main a {
 }
 main a:hover {
   text-decoration: underline;
+  opacity: 0.6;
+}
+
+main button:hover {
+  opacity: 0.6;
+} 
+
+main input:hover {
+  opacity: 0.6;
+}
+
+main input:focus {
+  border: 3px;
 }
 
 .active {
   text-decoration: underline;
-  cursor: default;
 }
 
 form {
