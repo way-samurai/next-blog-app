@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { useEffect, useState } from "react";
 import { getAllPosts } from "@/services/getPosts";
 import LoadingPosts from "./loading";
-import Posts from "../../components/Posts.tsx";
+import Posts from "../../components/Posts";
 
 const metadata: Metadata = {
   title: "Blog | Next App",
