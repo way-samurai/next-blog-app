@@ -1,9 +1,5 @@
-"use client";
 import { Metadata } from "next";
-import { useEffect, useState } from "react";
-import { getAllPosts } from "@/services/getPosts";
-import LoadingPosts from "./loading";
-import Posts from "../../components/Posts";
+import { Posts } from "../../components/Posts";
 import PostSearch from "@/components/PostSearch";
 
 const metadata: Metadata = {
@@ -11,18 +7,14 @@ const metadata: Metadata = {
 };
 
 export default function Blog() {
-  const [posts, setPosts] = useState<any[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
 
-  useEffect(() => {
-    getAllPosts().then(setPosts).finally(() => setLoading(false));
-  }, [])
 
+  
   return (
     <>
       <h1>Blog Page</h1>
-      <PostSearch onSearch={setPosts}/>
-      {loading ? <LoadingPosts /> : <Posts posts={posts} />}
+      {/* <PostSearch /> */}
+      <Posts />
     </>
   );
 };
