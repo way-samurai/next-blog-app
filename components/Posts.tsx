@@ -1,20 +1,23 @@
 "use client";
-import { shallow } from "zustand/shallow";
-import { usePosts } from "@/store";
+import useSWR from "swr";
+import { getAllPosts } from "@/services/getPosts";
+// import { shallow } from "zustand/shallow";
+// import { usePosts } from "@/store";
 import Link from "next/link";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 const Posts = () => {
-  const [posts, loading, getAllPosts] = usePosts(
-    ({posts, loading, getAllPosts}) => ([posts, loading, getAllPosts]),
-    shallow
-);
+  const {data: posts, isLoading} = useSWR('posts', getAllPosts);
+//const [posts, loading, getAllPosts] = usePosts(
+// ({posts, loading, getAllPosts}) => ([posts, loading, getAllPosts]),
+// shallow
+// );
 
-  useEffect(() => {
-    getAllPosts();
-  }, [getAllPosts]);
+// useEffect(() => {
+//   getAllPosts();
+// }, [getAllPosts]);
 
-  return loading ? (
+  return isLoading ? (
     <h3>Loading... </h3>
   ) : (
     <ul>
