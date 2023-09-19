@@ -7,13 +7,10 @@ const metadata: Metadata = {
 };
 
 export default function Blog() {
-
-
-  
   return (
     <>
       <h1>Blog Page</h1>
-      {/* <PostSearch /> */}
+      <PostSearch />
       <Posts />
     </>
   );
