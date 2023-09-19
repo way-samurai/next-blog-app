@@ -14,6 +14,7 @@ export async function DELETE(req: Request, { params }: { params: { id: string } 
 
   // logic delete post
   // redirect('/blog')
-
+  
+  //В реальном приложении код ниже не должен использоваться :D.
   return NextResponse.json({ id, type, coo2 });
 }
