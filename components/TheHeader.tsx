@@ -1,4 +1,4 @@
-import Navigation from "./Navigation.tsx";
+import Navigation from "./Navigation";
 
 const navItems = [
     { label: "Home", href: "/"},

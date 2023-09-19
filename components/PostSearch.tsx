@@ -1,7 +1,7 @@
 'use client';
 
 import { getPostsBySearch } from "@/services/getPosts";
-import { Dispatch, FormEventHandler, SetStateAction, useState } from "react";
+import { FormEventHandler, SetStateAction, useState } from "react";
 
 type Props = {
     onSearch: (value: SetStateAction<any[]>) => void;
